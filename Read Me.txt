@@ -1,0 +1,76 @@
+# PHP CRUD Application
+
+A simple **CRUD (Create, Read, Update, Delete)** web application built with **PHP** and **MySQL**. This app demonstrates how to perform basic database operations using procedural PHP and a MySQL database.
+
+## 🧾 Features
+
+- Create new records
+- Read and display data from the database
+- Update existing records
+- Delete records from the database
+- User-friendly interface (optionally styled with Bootstrap)
+
+## 🛠️ Technologies Used
+
+- PHP (Procedural)
+- MySQL
+- HTML/CSS
+- (Optional) Bootstrap 5
+
+## 🗃️ Database Setup
+
+1. Import the following SQL file into your MySQL database:
+
+```sql
+CREATE DATABASE users_db;
+
+USE users_db;
+
+CREATE TABLE users (
+  id INT(11) AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(100) NOT NULL,
+  email VARCHAR(100) NOT NULL,
+  phone VARCHAR(15),
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+<?php
+$host = "localhost";
+$user = "root";
+$pass = "";
+$dbname = "users_db";
+
+$conn = mysqli_connect($host, $user, $pass, $dbname);
+
+if (!$conn) {
+  die("Connection failed: " . mysqli_connect_error());
+}
+?>
+/crud-app/
+│
+├── index.php          # Displays all records
+├── create.php         # Form to add a new record
+├── edit.php         # Form to edit a record
+├── delete.php         # Deletes a record
+└── style.css          # Optional styling
+How to Run
+Clone this repository or download the source code.
+
+Place the project in your local server directory (htdocs for XAMPP).
+
+Start Apache and MySQL from XAMPP/WAMP.
+
+Import the database using phpMyAdmin or MySQL CLI.
+
+Access the project in your browser:
+http://localhost/crud-app/
+Notes
+Ensure PHP and MySQL are installed and configured on your machine.
+
+Modify database credentials as needed.
+
+For security and scalability, consider switching to PDO or MySQLi (OOP) and using form validation/sanitization.
+
+🙋‍♂️ Author
+Muhammad Ali Khan
+https://github.com/aliikhan-23-dev
+makaic18@gmail.com
